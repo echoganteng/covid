@@ -9,6 +9,12 @@
 </li>
 @if (Auth::user()->level_id == 1)
 <li class="nav-item  ">
+    <a href="{{url('/panel/covid')}}" class="nav-link nav-toggle">
+        <i class="icon-plus"></i>
+        <span class="title">Covid-19</span>
+    </a>
+</li>
+<li class="nav-item  ">
     <a href="javascript:;" class="nav-link nav-toggle">
         <i class="icon-doc"></i>
         <span class="title">Media Informasi</span>
