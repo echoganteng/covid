@@ -23,13 +23,13 @@
 */
 //======================================Bagian Portal=======================================//
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 //======================================Bagian Beranda=======================================//
 
-Route::get('/beranda', 'IndexDepanController@index');
+Route::get('/', 'IndexDepanController@index');
 
 // Berita-----------------------------------------------------------------------------------
 
