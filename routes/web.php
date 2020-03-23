@@ -93,6 +93,12 @@ Route::post('/webmin', ['as' => 'login.post', 'uses' => 'Auth\LoginController@lo
 
 Route::post('/logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 
+Route::get('/panel/covid', 'CovidController@index');
+Route::get('/panel/covid/{x}/edit', 'CovidController@edit');
+Route::post('/panel/covid/update', 'CovidController@update');
+Route::post('/panel/covid/indexpost', 'CovidController@indexpost');
+Route::get('/panel/covid/indextanggal/{x}', 'CovidController@indextanggal');
+
 // Routing untuk authentifikasi
 // Route::group(['namespace' => 'Auth'],function(){
 // 	Route::get('/webmin','LoginController@showLoginForm')->name('login');
