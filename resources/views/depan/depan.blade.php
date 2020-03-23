@@ -1,605 +1,958 @@
-<!DOCTYPE html>
-
-<html>
-
-
-
-<head>
-
-    @include('depan.bagian.meta')
-
-    <title>KPU Kabupaten Situbondo</title>
-
-    @include('depan.bagian.css_favicon')
-
-</head>
-
-<body>
-
-<link itemprop="thumbnailUrl" href="{{asset('tema/kominfo_rsud_besuki/favicon.png')}}"> <span itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject"> <link itemprop="url" href="{{asset('tema/kominfo_rsud_besuki/favicon.png')}}"> </span>
-
-
-
-<!-- Wrap -->
-
-<div id="wrap"> 
-
-  
-
-  <!-- header -->
-
-@include('depan.bagian.header')
-
-  
-
-  <!-- HOME MAIN SLIDER -->
-
-@include('depan.bagian.slider')
-
-  
-
-  <!-- Content -->
-
-  <div id="content"> 
-
-    
-
-    <!-- BLOG -->
-
-    <section class="blog padding-top-70 padding-bottom-70">
-
-      <div class="container"> 
-
-        <!-- Heading -->
-
-        <div class="heading text-center">
-
-          <h4><a href="{{url('berita')}}"> BERITA TERBARU </a></h4>
-
-        </div>
-
-        <!-- Blog Row -->
-
-        <div class="row"> 
-
-          @foreach($posts1 as $berita1)
-
-          <div class="col-md-4">
-
-            <article> <img class="img-responsive" src="{{asset($berita1->gambar)}}" alt="{{$berita1->judul}}" > 
-
-              <?php
-
-              $tgl = date('d', strtotime($berita1->tgl_buat));
-
-              $bln = date('M', strtotime($berita1->tgl_buat));
-
-              ?>
-
-              <div class="date"> {{$tgl}} <span>{{$bln}}</span> </div>
-
-              
-
-              <!-- Detail -->
-
-              <div class="post-detail"> <a href="{{url('berita/'.$berita1->slug)}}" class="post-tittle">{{$berita1->judul}}</a>
-
-                {!! Str::words($berita1->berita, 15,' ....</p>')  !!}
-
-              </div>
-
-            </article>
-
-          </div>
-
-          @endforeach
-
-        </div>
-
-        <div class="row"> 
-
-          @foreach($posts2 as $berita2)
-
-          <div class="col-md-4">
-
-            <article> <img class="img-responsive" src="{{asset($berita2->gambar)}}" alt="{{$berita2->judul}}" > 
-
-              <?php
-
-              $tgl = date('d', strtotime($berita2->tgl_buat));
-
-              $bln = date('M', strtotime($berita2->tgl_buat));
-
-              ?>
-
-              <div class="date"> {{$tgl}} <span>{{$bln}}</span> </div>
-
-              
-
-              <!-- Detail -->
-
-              <div class="post-detail"> <a href="{{url('berita/'.$berita2->slug)}}" class="post-tittle">{{$berita2->judul}}</a>
-
-                {!! Str::words($berita2->berita, 15,' ....</p>')  !!}
-
-              </div>
-
-            </article>
-
-          </div>
-
-          @endforeach
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- Testi -->
-
-    <section class="padding-top-100 padding-bottom-100" style="background: url({{asset($almt->gambar_1)}}) center center fixed no-repeat; background-size: cover;" >
-
-      <div class="container">
-
-        <div class="testi">
-
-          <p style="color: #FF9C00;"> {{$almt->nama}}</p>
-
-            <div style="width:100%; height:100%">
-
-	            <img style="margin: 0 auto; display: block;" src="{{asset('tema/LogoKPU.png')}}" width="200px" height="200px">
-
-            </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <section class="blog light-gray-bg padding-top-70 padding-bottom-70">
-
-      <div class="container">
-        <div class="row">
-          <div class="col-md-9 col-sm-8">
-
-            <div id="site-content">
-
-              <div class="row">
-
-                <div class="col-md-8 col-sm-6">
-
-                  <div class="left-content">
-
-
-
-                    <div class="section lifestyle-section">
-
-                      <h1 class="section-title"><a class="btn btn-sm btn-info" href="{{url('/opini')}}"><i class="fa fa-arrow-circle-right"></i></a> Opini</h1>
-
-                      
-
-                      <div class="row">
-
-                        <?php for ($i=0; $i < 2; $i++) { ?>
-                        <div class="col-md-6">
-
-                          <div class="post medium-post">
-
-                            <div class="entry-header">
-
-                              <div class="entry-thumbnail">
-
-                                <img class="img-responsive" src="{{asset($opini[$i]->gambar)}}" alt="" />
-
-                              </div>
-
-                            </div>
-
-                            <div class="post-content">                
-
-                              <div class="entry-meta">
-
-                                <ul class="list-inline">
-
-                                  <li class="publish-date"><a target="_blank" href="{{url('opini/'.$opini[$i]->slug)}}"><i class="fa fa-clock-o"></i> {{$opini[$i]->tgl_buat}} </a></li>
-
-                                </ul>
-
-                              </div>
-
-                              <h2 class="entry-title">
-
-                                <a target="_blank" href="{{url('opini/'.$opini[$i]->slug)}}" style="text-transform:capitalize;">{{$opini[$i]->judul}}</a>
-
-                              </h2>
-
-                            </div>
-
-                          </div><!--/post--> 
-
-                        </div>
-                        <?php } ?>
-
-                      </div>
-                      <div class="row">
-
-                        <?php for ($i=2; $i < 4; $i++) { ?>                        
-
-                        <div class="col-md-6">
-
-                          <div class="post medium-post">
-
-                            <div class="entry-header">
-
-                              <div class="entry-thumbnail">
-
-                                <img class="img-responsive" src="{{asset($opini[$i]->gambar)}}" alt="" />
-
-                              </div>
-
-                            </div>
-
-                            <div class="post-content">                
-
-                              <div class="entry-meta">
-
-                                <ul class="list-inline">
-
-                                  <li class="publish-date"><a target="_blank" href="{{url('opini/'.$opini[$i]->slug)}}"><i class="fa fa-clock-o"></i> {{$opini[$i]->tgl_buat}} </a></li>
-
-                                </ul>
-
-                              </div>
-
-                              <h2 class="entry-title">
-
-                                <a target="_blank" href="{{url('opini/'.$opini[$i]->slug)}}">{{$opini[$i]->judul}}</a>
-
-                              </h2>
-
-                            </div>
-
-                          </div><!--/post--> 
-
-                        </div>
-
-                        <?php } ?>
-
-                      </div>
-
-                      <div class="row">
-
-                        <?php for ($i=4; $i < 6; $i++) { ?>                        
-
-                        <div class="col-md-6">
-
-                          <div class="post medium-post">
-
-                            <div class="entry-header">
-
-                              <div class="entry-thumbnail">
-
-                                <img class="img-responsive" src="{{asset($opini[$i]->gambar)}}" alt="" />
-
-                              </div>
-
-                            </div>
-
-                            <div class="post-content">                
-
-                              <div class="entry-meta">
-
-                                <ul class="list-inline">
-
-                                  <li class="publish-date"><a target="_blank" href="{{url('opini/'.$opini[$i]->slug)}}"><i class="fa fa-clock-o"></i> {{$opini[$i]->tgl_buat}} </a></li>
-
-                                </ul>
-
-                              </div>
-
-                              <h2 class="entry-title">
-
-                                <a target="_blank" href="{{url('opini/'.$opini[$i]->slug)}}">{{$opini[$i]->judul}}</a>
-
-                              </h2>
-
-                            </div>
-
-                          </div><!--/post--> 
-
-                        </div>
-
-                        <?php } ?>
-
-                      </div>
-
-                      <div class="row">
-
-                        <?php for ($i=6; $i < 8; $i++) { ?>                        
-
-                        <div class="col-md-6">
-
-                          <div class="post medium-post">
-
-                            <div class="entry-header">
-
-                              <div class="entry-thumbnail">
-
-                                <img class="img-responsive" src="{{asset($opini[$i]->gambar)}}" alt="" />
-
-                              </div>
-
-                            </div>
-
-                            <div class="post-content">                
-
-                              <div class="entry-meta">
-
-                                <ul class="list-inline">
-
-                                  <li class="publish-date"><a target="_blank" href="{{url('opini/'.$opini[$i]->slug)}}"><i class="fa fa-clock-o"></i> {{$opini[$i]->tgl_buat}} </a></li>
-
-                                </ul>
-
-                              </div>
-
-                              <h2 class="entry-title">
-
-                                <a target="_blank" href="{{url('opini/'.$opini[$i]->slug)}}">{{$opini[$i]->judul}}</a>
-
-                              </h2>
-
-                            </div>
-
-                          </div><!--/post--> 
-
-                        </div>
-
-                        <?php } ?>
-
-                      </div>
-
-                      
-
-                      
-
-                    </div><!--/.lifestyle -->
-
-
-
-                
-
-                    
-
-                  </div><!--/.left-content-->
-
-                </div>
-                <div class="col-md-4 col-sm-6">
-                  <div class="middle-content">
-                    <div class="section business-section">
-
-                      <h1 class="section-title"><a class="btn btn-sm btn-info" href="{{url('/resensi')}}"><i class="fa fa-arrow-circle-right"></i></a> Resensi</h1>
-
-                      @foreach($resensi as $resensis)
-
-                      <div class="post medium-post">
-
-                        <div class="entry-header">
-
-                          <div class="entry-thumbnail">
-
-                            <img class="img-responsive" src="{{asset($resensis->gambar)}}" alt="{{$resensis->judul}}" />
-
-                          </div>
-
-                        </div>
-
-                        <div class="post-content">                
-
-                          <div class="entry-meta">
-
-                            <ul class="list-inline">
-
-                              <li class="publish-date"><a target="_blank" href="{{url('resensi/'.$resensis->slug)}}"><i class="fa fa-clock-o"></i> {{$resensis->tgl_buat}} </a></li>
-
-                            </ul>
-
-                          </div>
-
-                          <h2 class="entry-title">
-
-                            <a target="_blank" href="{{url('resensi/'.$resensis->slug)}}">{{$resensis->judul}}</a>
-
-                          </h2>
-
-                        </div>
-
-                      </div>
-
-                      @endforeach
-
-                    </div><!-- /.business-section -->
-                  </div>
-                </div>
-              </div>
-
-            </div><!--/#site-content-->
-
-          </div>
-          <div class="col-md-3 col-sm-4">
-            <div class="section business-section">
-                <h1 class="section-title"><a class="btn btn-sm btn-info" href="{{url('/informasi')}}"><i class="fa fa-arrow-circle-right"></i></a> Pengumuman</h1>
-                @foreach($infos1 as $pengumuman)
-
-                <div class="post medium-post">
-
-                  <div class="entry-header">
-
-                    <div class="entry-thumbnail">
-
-                      <img class="img-responsive" src="{{asset($pengumuman->gambar)}}" alt="" />
-
+@extends('depan.bagian.page')
+@section('content')
+<!-- DICECTORY LISTING GOOGLE MAP AREA START -->
+<div class="directory-listing-google-map-area">
+    <div id="gmap"></div>
+</div>
+<!-- DICECTORY LISTING GOOGLE MAP AREA START -->
+
+<!-- Start page content -->
+<section id="page-content" class="page-wrapper">
+
+    <!-- ABOUT SHELTEK AREA START -->
+    <div class="about-sheltek-area ptb-115">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <div class="section-title mb-30">
+                        <h3>SOME WORD </h3>
+                        <h2>ABOUT SHELTEK</h2>
                     </div>
-
-                  </div>
-
-                  <div class="post-content">                
-
-                    <div class="entry-meta">
-
-                      <ul class="list-inline">
-
-                        <li class="publish-date"><a target="_blank" href="{{url('informasi/'.$pengumuman->slug)}}"><i class="fa fa-clock-o"></i> {{$pengumuman->tgl_buat}} </a></li>
-
-                      </ul>
-
+                    <div class="about-sheltek-info">
+                        <p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Sheltek</span> is the best theme for elit, sed do
+                            eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et lorna aliquatd minim veniam, quis nostrud exercitation oris
+                            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolo.</p>
+                        <p>Lorem is a dummy text do eiusmod tempor dolor sit amet, onsectetur adip iscing elit,
+                            sed do eiusmod tempor incididunt ut labore et lorna aliqua Ut enim onsectetur </p>
+                        <p>Lorem is a dummy text do eiusmod tempor dolor sit amet, onsectetur adip iscing elit,
+                            sed do eiusmod tempor incididunt ut labore et lorna aliqua Ut enim onsectetur </p>
                     </div>
-
-                    <h2 class="entry-title">
-
-                      <a target="_blank" href="{{url('informasi/'.$pengumuman->slug)}}">{{$pengumuman->judul}}</a>
-
-                    </h2>
-
-                  </div>
-
                 </div>
-
-                @endforeach
-              </div><!-- /.business-section -->
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <section class="features light-gray-bg padding-top-70 padding-bottom-70">
-
-      <div class="container">
-        <div class="col-md-9 col-sm-8">          
-          <h1 class="section-title"><a class="btn btn-sm btn-info" href="#"><i class="fa fa-arrow-circle-right"></i></a> Galeri Foto</h1>
-          <div class="gallery">
-            @foreach($images as $galeri)
-            <a data-fancybox="group" data-caption="{{$galeri->judul}}" href="{{asset('galeri/'.$galeri->gambar)}}">
-                <img src="{{asset('galeri/thumbnail/'.$galeri->gambar)}}" >
-            </a>
-            @endforeach 
-          </div>         
-        </div>
-        <div class="col-md-3 col-sm-4 card-deck">
-          <h1 class="section-title"><a class="btn btn-sm btn-info" href="#"><i class="fa fa-arrow-circle-right"></i></a> Galeri Video</h1>
-          @foreach($video as $videos)
-          <div class="card">
-            <a data-fancybox href="{{$videos->link}}">
-              <img class="card-img-top img-fluid" src="{{$videos->thumbnail}}" width="240px" height="160px" />
-            </a>
-            <div class="card-body">
-              <p class="card-text">{{$videos->judul}}</p>
+                <div class="col-md-6 col-12">
+                    <div class="about-image">
+                        <a href="about.html"><img src="images/about/1.jpg" alt=""></a>
+                    </div>
+                </div>
             </div>
-          </div>
-          @endforeach 
         </div>
-      </div>
+    </div>
+    <!-- ABOUT SHELTEK AREA END -->
 
-    </section>
-
-    <section class="features light-gray-bg padding-top-70 padding-bottom-70">
-      <div class="container">
-        <h1 class="section-title"><a class="btn btn-sm btn-info" href="#"><i class="fa fa-arrow-circle-right"></i></a> Link Terkait</h1>
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-              <div id="Carousel" class="carousel slide">
-                <ol class="carousel-indicators">
-                    <li data-target="#Carousel" data-slide-to="0" class="active"></li>
-                </ol>
-                 
-                <!-- Carousel items -->
-                <div class="carousel-inner">
-                    
-                <div class="item active">
-                  <div class="row">
-                    <div class="col-md-2 col-xs-4"><a href="https://kpu.go.id" target="_BLANK" class="thumbnail"><img src="{{asset('tema/logo-link-terkait_kpu-ri.jpg')}}" alt="Image" style="height:80px;"></a></div>
-                    <div class="col-md-2 col-xs-4"><a href="https://kpujatim.go.id" target="_BLANK" class="thumbnail"><img src="{{asset('tema/logo-link-terkait_kpu-jatim.jpg')}}" alt="Image" style="height:80px;"></a></div>
-                    <div class="col-md-2 col-xs-4"><a href="https://dkpp.go.id" target="_BLANK" class="thumbnail"><img src="{{asset('tema/logo-link-terkait_dkpp.jpg')}}" alt="Image" style="height:80px;"></a></div>
-                    <div class="col-md-2 col-xs-4"><a href="https://mkri.id" target="_BLANK" class="thumbnail"><img src="{{asset('tema/logo-link-terkait_mk.jpg')}}" alt="Image" style="height:80px;"></a></div>
-                    <div class="col-md-2 col-xs-4"><a href="http://perludem.org" target="_BLANK" class="thumbnail"><img src="{{asset('tema/logo-link-terkait_perludem.jpg')}}" alt="Image" style="height:80px;"></a></div>
-                    <div class="col-md-2 col-xs-4"><a href="https://situbondokab.go.id" target="_BLANK" class="thumbnail"><img src="{{asset('tema/logo-link-terkait_situbondo.jpg')}}" alt="Image" style="height:80px;"></a></div>
-                  </div><!--.row-->
-                </div><!--.item-->                 
-
-                </div>         
-              </div>
-          </div>
+    <!-- SERVICES AREA START -->
+    <div class="services-area pb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title-2 text-center">
+                        <h2>OUR SERVICES</h2>
+                        <p>Sheltek is the best theme for elit, sed do eiusmod tempor dolor sit amet, conse
+                            ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliquatd
+                            minim veniam, quis nostrud</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="service-carousel">
+                        <!-- service-item -->
+                        <div class="col">
+                            <div class="service-item">
+                                <div class="service-item-image">
+                                    <a href="service-details.html"><img src="images/service/1.jpg" alt=""></a>
+                                </div>
+                                <div class="service-item-info">
+                                    <h5><a href="service-details.html">Sale Property</a></h5>
+                                    <p>Property sale best theme for litdo eiusmod tempor dolor sit amet, conse
+                                        tetur adiping eiusmo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- service-item -->
+                        <div class="col">
+                            <div class="service-item">
+                                <div class="service-item-image">
+                                    <a href="service-details.html"><img src="images/service/2.jpg" alt=""></a>
+                                </div>
+                                <div class="service-item-info">
+                                    <h5><a href="service-details.html">Buy Property</a></h5>
+                                    <p>Property sale best theme for litdo eiusmod tempor dolor sit amet, conse
+                                        tetur adiping eiusmo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- service-item -->
+                        <div class="col">
+                            <div class="service-item">
+                                <div class="service-item-image">
+                                    <a href="service-details.html"><img src="images/service/3.jpg" alt=""></a>
+                                </div>
+                                <div class="service-item-info">
+                                    <h5><a href="service-details.html">Rent Property</a></h5>
+                                    <p>Property sale best theme for litdo eiusmod tempor dolor sit amet, conse
+                                        tetur adiping eiusmo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- service-item -->
+                        <div class="col">
+                            <div class="service-item">
+                                <div class="service-item-image">
+                                    <a href="service-details.html"><img src="images/service/4.jpg" alt=""></a>
+                                </div>
+                                <div class="service-item-info">
+                                    <h5><a href="service-details.html">Property Management</a></h5>
+                                    <p>Property sale best theme for litdo eiusmod tempor dolor sit amet, conse
+                                        tetur adiping eiusmo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- service-item -->
+                        <div class="col">
+                            <div class="service-item">
+                                <div class="service-item-image">
+                                    <a href="service-details.html"><img src="images/service/4.jpg" alt=""></a>
+                                </div>
+                                <div class="service-item-info">
+                                    <h5><a href="service-details.html">Sale Property</a></h5>
+                                    <p>Property sale best theme for litdo eiusmod tempor dolor sit amet, conse
+                                        tetur adiping eiusmo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
+    <!-- SERVICES AREA END -->
 
-    
+    <!-- BOOKING AREA START -->
+    <div class="booking-area bg-1 call-to-bg plr-140 pt-75">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-12">
+                    <div class="section-title text-white">
+                        <h3>BOOK YOUR</h3>
+                        <h2 class="h1">HOME HERE</h2>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-12">
+                    <div class="booking-conternt clearfix">
+                        <div class="book-house text-white">
+                            <h2>BOOK YO`UR APPARTMENT OR HOUSE </h2>
+                            <h2 class="h5">CALL US ON : +0123 456 789 </h2>
+                        </div>
+                        <div class="booking-imgae">
+                            <img src="images/others/booking.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BOOKING AREA END -->
 
-    <!-- Counter -->
+    <!-- FEATURED FLAT AREA START -->
+    <div class="featured-flat-area pt-115 pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title-2 text-center">
+                        <h2>Featured PROPERTY</h2>
+                        <p>Sheltek is the best theme for elit, sed do eiusmod tempor dolor sit amet, conse
+                            ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliquatd
+                            minim veniam, quis nostrud</p>
+                    </div>
+                </div>
+            </div>
+            <div class="featured-flat">
+                <div class="row">
+                    <!-- flat-item -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="flat-item">
+                            <div class="flat-item-image">
+                                <span class="for-sale">For Sale</span>
+                                <a href="properties-details.html"><img src="images/flat/1.jpg" alt=""></a>
+                                <div class="flat-link">
+                                    <a href="properties-details.html">More Details</a>
+                                </div>
+                                <ul class="flat-desc">
+                                    <li>
+                                        <img src="images/icons/4.png" alt="">
+                                        <span>450 sqft</span>
+                                    </li>
+                                    <li>
+                                        <img src="images/icons/5.png" alt="">
+                                        <span>5</span>
+                                    </li>
+                                    <li>
+                                        <img src="images/icons/6.png" alt="">
+                                        <span>3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flat-item-info">
+                                <div class="flat-title-price">
+                                    <h5><a href="properties-details.html">Masons de Villa </a></h5>
+                                    <span class="price">$52,350</span>
+                                </div>
+                                <p><img src="images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- flat-item -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="flat-item">
+                            <div class="flat-item-image">
+                                <a href="properties-details.html"><img src="images/flat/2.jpg" alt=""></a>
+                                <div class="flat-link">
+                                    <a href="properties-details.html">More Details</a>
+                                </div>
+                                <ul class="flat-desc">
+                                    <li>
+                                        <img src="images/icons/4.png" alt="">
+                                        <span>450 sqft</span>
+                                    </li>
+                                    <li>
+                                        <img src="images/icons/5.png" alt="">
+                                        <span>5</span>
+                                    </li>
+                                    <li>
+                                        <img src="images/icons/6.png" alt="">
+                                        <span>3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flat-item-info">
+                                <div class="flat-title-price">
+                                    <h5><a href="properties-details.html">Masons de Villa </a></h5>
+                                    <span class="price">$52,350</span>
+                                </div>
+                                <p><img src="images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- flat-item -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="flat-item">
+                            <div class="flat-item-image">
+                                <span class="for-sale rent">For rent</span>
+                                <a href="properties-details.html"><img src="images/flat/3.jpg" alt=""></a>
+                                <div class="flat-link">
+                                    <a href="properties-details.html">More Details</a>
+                                </div>
+                                <ul class="flat-desc">
+                                    <li>
+                                        <img src="images/icons/4.png" alt="">
+                                        <span>450 sqft</span>
+                                    </li>
+                                    <li>
+                                        <img src="images/icons/5.png" alt="">
+                                        <span>5</span>
+                                    </li>
+                                    <li>
+                                        <img src="images/icons/6.png" alt="">
+                                        <span>3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flat-item-info">
+                                <div class="flat-title-price">
+                                    <h5><a href="properties-details.html">Masons de Villa </a></h5>
+                                    <span class="price">$52,350</span>
+                                </div>
+                                <p><img src="images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- flat-item -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="flat-item">
+                            <div class="flat-item-image">
+                                <a href="properties-details.html"><img src="images/flat/4.jpg" alt=""></a>
+                                <div class="flat-link">
+                                    <a href="properties-details.html">More Details</a>
+                                </div>
+                                <ul class="flat-desc">
+                                    <li>
+                                        <img src="images/icons/4.png" alt="">
+                                        <span>450 sqft</span>
+                                    </li>
+                                    <li>
+                                        <img src="images/icons/5.png" alt="">
+                                        <span>5</span>
+                                    </li>
+                                    <li>
+                                        <img src="images/icons/6.png" alt="">
+                                        <span>3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flat-item-info">
+                                <div class="flat-title-price">
+                                    <h5><a href="properties-details.html">Masons de Villa </a></h5>
+                                    <span class="price">$52,350</span>
+                                </div>
+                                <p><img src="images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- flat-item -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="flat-item">
+                            <div class="flat-item-image">
+                                <span class="for-sale">For Sale</span>
+                                <a href="properties-details.html"><img src="images/flat/5.jpg" alt=""></a>
+                                <div class="flat-link">
+                                    <a href="properties-details.html">More Details</a>
+                                </div>
+                                <ul class="flat-desc">
+                                    <li>
+                                        <img src="images/icons/4.png" alt="">
+                                        <span>450 sqft</span>
+                                    </li>
+                                    <li>
+                                        <img src="images/icons/5.png" alt="">
+                                        <span>5</span>
+                                    </li>
+                                    <li>
+                                        <img src="images/icons/6.png" alt="">
+                                        <span>3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flat-item-info">
+                                <div class="flat-title-price">
+                                    <h5><a href="properties-details.html">Masons de Villa </a></h5>
+                                    <span class="price">$52,350</span>
+                                </div>
+                                <p><img src="images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- flat-item -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="flat-item">
+                            <div class="flat-item-image">
+                                <a href="properties-details.html"><img src="images/flat/6.jpg" alt=""></a>
+                                <div class="flat-link">
+                                    <a href="properties-details.html">More Details</a>
+                                </div>
+                                <ul class="flat-desc">
+                                    <li>
+                                        <img src="images/icons/4.png" alt="">
+                                        <span>450 sqft</span>
+                                    </li>
+                                    <li>
+                                        <img src="images/icons/5.png" alt="">
+                                        <span>5</span>
+                                    </li>
+                                    <li>
+                                        <img src="images/icons/6.png" alt="">
+                                        <span>3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flat-item-info">
+                                <div class="flat-title-price">
+                                    <h5><a href="properties-details.html">Masons de Villa </a></h5>
+                                    <span class="price">$52,350</span>
+                                </div>
+                                <p><img src="images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- flat-item -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="flat-item">
+                            <div class="flat-item-image">
+                                <span class="for-sale rent">For rent</span>
+                                <a href="properties-details.html"><img src="images/flat/7.jpg" alt=""></a>
+                                <div class="flat-link">
+                                    <a href="properties-details.html">More Details</a>
+                                </div>
+                                <ul class="flat-desc">
+                                    <li>
+                                        <img src="images/icons/4.png" alt="">
+                                        <span>450 sqft</span>
+                                    </li>
+                                    <li>
+                                        <img src="images/icons/5.png" alt="">
+                                        <span>5</span>
+                                    </li>
+                                    <li>
+                                        <img src="images/icons/6.png" alt="">
+                                        <span>3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flat-item-info">
+                                <div class="flat-title-price">
+                                    <h5><a href="properties-details.html">Masons de Villa </a></h5>
+                                    <span class="price">$52,350</span>
+                                </div>
+                                <p><img src="images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- flat-item -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="flat-item">
+                            <div class="flat-item-image">
+                                <a href="properties-details.html"><img src="images/flat/8.jpg" alt=""></a>
+                                <div class="flat-link">
+                                    <a href="properties-details.html">More Details</a>
+                                </div>
+                                <ul class="flat-desc">
+                                    <li>
+                                        <img src="images/icons/4.png" alt="">
+                                        <span>450 sqft</span>
+                                    </li>
+                                    <li>
+                                        <img src="images/icons/5.png" alt="">
+                                        <span>5</span>
+                                    </li>
+                                    <li>
+                                        <img src="images/icons/6.png" alt="">
+                                        <span>3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flat-item-info">
+                                <div class="flat-title-price">
+                                    <h5><a href="properties-details.html">Masons de Villa </a></h5>
+                                    <span class="price">$52,350</span>
+                                </div>
+                                <p><img src="images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- flat-item -->
+                    <div class="col-lg-4 col-12 d-none d-lg-block">
+                        <div class="flat-item">
+                            <div class="flat-item-image">
+                                <span class="for-sale">For Sale</span>
+                                <a href="properties-details.html"><img src="images/flat/9.jpg" alt=""></a>
+                                <div class="flat-link">
+                                    <a href="properties-details.html">More Details</a>
+                                </div>
+                                <ul class="flat-desc">
+                                    <li>
+                                        <img src="images/icons/4.png" alt="">
+                                        <span>450 sqft</span>
+                                    </li>
+                                    <li>
+                                        <img src="images/icons/5.png" alt="">
+                                        <span>5</span>
+                                    </li>
+                                    <li>
+                                        <img src="images/icons/6.png" alt="">
+                                        <span>3</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flat-item-info">
+                                <div class="flat-title-price">
+                                    <h5><a href="properties-details.html">Masons de Villa </a></h5>
+                                    <span class="price">$52,350</span>
+                                </div>
+                                <p><img src="images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FEATURED FLAT AREA END -->
 
-    <section class="counter padding-top-50">
+    <!-- FEATURES AREA START -->
+    <div class="features-area fix">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-7 offset-lg-5">
+                    <div class="features-info bg-gray">
+                        <div class="section-title mb-30">
+                            <h3>HERE IS</h3>
+                            <h2 class="h1">AWESOME FEATUES</h2>
+                        </div>
+                        <div class="features-desc">
+                            <p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Sheltek</span> is the best theme for elit, sed do
+                                eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, sed do smod tempor
+                                incididunt ut labore et lorna aliquatd minim veniam, quis nostrud exercitation
+                                oris nisi</p>
+                        </div>
+                        <div class="features-include">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-6 col-md-4">
+                                    <div class="features-include-list">
+                                        <h6><img src="images/icons/7.png" alt="">Fully Furnished</h6>
+                                        <p>Lorem is a dummy text do eiud tempor dolor sit amet dum</p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-4">
+                                    <div class="features-include-list">
+                                        <h6><img src="images/icons/7.png" alt="">Royal Touch Paint</h6>
+                                        <p>Lorem is a dummy text do eiud tempor dolor sit amet dum</p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-4">
+                                    <div class="features-include-list">
+                                        <h6><img src="images/icons/7.png" alt="">Latest Interior Design</h6>
+                                        <p>Lorem is a dummy text do eiud tempor dolor sit amet dum</p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-4">
+                                    <div class="features-include-list">
+                                        <h6><img src="images/icons/7.png" alt="">Non Stop Security</h6>
+                                        <p>Lorem is a dummy text do eiud tempor dolor sit amet dum</p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-4">
+                                    <div class="features-include-list">
+                                        <h6><img src="images/icons/7.png" alt="">Living Inside a Nature</h6>
+                                        <p>Lorem is a dummy text do eiud tempor dolor sit amet dum</p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-4">
+                                    <div class="features-include-list">
+                                        <h6><img src="images/icons/7.png" alt="">Luxurious Fittings</h6>
+                                        <p>Lorem is a dummy text do eiud tempor dolor sit amet dum</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FEATURES AREA END -->
 
-      <div class="container"> 
+    <!-- OUR AGENTS AREA START -->
+    <div class="our-agents-area pt-115 pb-55">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title-2 text-center">
+                        <h2>OUR AGENTS</h2>
+                        <p>Sheltek is the best theme for elit, sed do eiusmod tempor dolor sit amet, conse
+                            ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliquatd
+                            minim veniam, quis nostrud</p>
+                    </div>
+                </div>
+            </div>
+            <div class="our-agents">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="agents-carousel">
+                            <!-- single-agent -->
+                            <div class="col">
+                                <div class="single-agent">
+                                    <div class="agent-image">
+                                        <img src="images/agents/1.jpg" alt="">
+                                    </div>
+                                    <div class="agent-info">
+                                        <div class="agent-name">
+                                            <h5><a href="agent-details.html">Shah M Nawaz</a></h5>
+                                            <p>Real Estate Agent</p>
+                                        </div>
+                                    </div>
+                                    <div class="agent-info-hover">
+                                        <div class="agent-name">
+                                            <h5><a href="agent-details.html">Shah M Nawaz</a></h5>
+                                            <p>Real Estate Agent</p>
+                                        </div>
+                                        <ul class="agent-address">
+                                            <li><img src="images/icons/phone-2.png" alt="">+1245 785 659 </li>
+                                            <li><img src="images/icons/mail-close.png" alt="">eva@gmail.com
+                                            </li>
+                                        </ul>
+                                        <ul class="social-media">
+                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single-agent -->
+                            <div class="col">
+                                <div class="single-agent">
+                                    <div class="agent-image">
+                                        <img src="images/agents/2.jpg" alt="">
+                                    </div>
+                                    <div class="agent-info">
+                                        <div class="agent-name">
+                                            <h5><a href="agent-details.html">Eva Sharlin</a></h5>
+                                            <p>Real Estate Broker</p>
+                                        </div>
+                                    </div>
+                                    <div class="agent-info-hover">
+                                        <div class="agent-name">
+                                            <h5><a href="agent-details.html">Eva Sharlin</a></h5>
+                                            <p>Real Estate Broker</p>
+                                        </div>
+                                        <ul class="agent-address">
+                                            <li><img src="images/icons/phone-2.png" alt="">+1245 785 659 </li>
+                                            <li><img src="images/icons/mail-close.png" alt="">eva@gmail.com
+                                            </li>
+                                        </ul>
+                                        <ul class="social-media">
+                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single-agent -->
+                            <div class="col">
+                                <div class="single-agent">
+                                    <div class="agent-image">
+                                        <img src="images/agents/3.jpg" alt="">
+                                    </div>
+                                    <div class="agent-info">
+                                        <div class="agent-name">
+                                            <h5><a href="agent-details.html">Momen Bhuyan</a></h5>
+                                            <p>Real Estate Broker</p>
+                                        </div>
+                                    </div>
+                                    <div class="agent-info-hover">
+                                        <div class="agent-name">
+                                            <h5><a href="agent-details.html">Momen Bhuyan</a></h5>
+                                            <p>Real Estate Broker</p>
+                                        </div>
+                                        <ul class="agent-address">
+                                            <li><img src="images/icons/phone-2.png" alt="">+1245 785 659 </li>
+                                            <li><img src="images/icons/mail-close.png" alt="">eva@gmail.com
+                                            </li>
+                                        </ul>
+                                        <ul class="social-media">
+                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single-agent -->
+                            <div class="col">
+                                <div class="single-agent">
+                                    <div class="agent-image">
+                                        <img src="images/agents/4.jpg" alt="">
+                                    </div>
+                                    <div class="agent-info">
+                                        <div class="agent-name">
+                                            <h5><a href="agent-details.html">Sarmin Tabassum</a></h5>
+                                            <p>Real Estate Agent</p>
+                                        </div>
+                                    </div>
+                                    <div class="agent-info-hover">
+                                        <div class="agent-name">
+                                            <h5><a href="agent-details.html">Sarmin Tabassum</a></h5>
+                                            <p>Real Estate Agent</p>
+                                        </div>
+                                        <ul class="agent-address">
+                                            <li><img src="images/icons/phone-2.png" alt="">+1245 785 659 </li>
+                                            <li><img src="images/icons/mail-close.png" alt="">eva@gmail.com
+                                            </li>
+                                        </ul>
+                                        <ul class="social-media">
+                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single-agent -->
+                            <div class="col">
+                                <div class="single-agent">
+                                    <div class="agent-image">
+                                        <img src="images/agents/3.jpg" alt="">
+                                    </div>
+                                    <div class="agent-info">
+                                        <div class="agent-name">
+                                            <h5><a href="agent-details.html">Momen Bhuyan</a></h5>
+                                            <p>Real Estate Broker</p>
+                                        </div>
+                                    </div>
+                                    <div class="agent-info-hover">
+                                        <div class="agent-name">
+                                            <h5><a href="agent-details.html">Momen Bhuyan</a></h5>
+                                            <p>Real Estate Broker</p>
+                                        </div>
+                                        <ul class="agent-address">
+                                            <li><img src="images/icons/phone-2.png" alt="">+1245 785 659 </li>
+                                            <li><img src="images/icons/mail-close.png" alt="">eva@gmail.com
+                                            </li>
+                                        </ul>
+                                        <ul class="social-media">
+                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- OUR AGENTS AREA END -->
 
+    <!-- TESTIMONIAL AREA START -->
+    <div class="testimonial-area pb-115">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="testimonial">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-9">
+                                <div class="section-title mb-30">
+                                    <h3>SOME OF OUR</h3>
+                                    <h2 class="h1">HAPPY CLIENTS</h2>
+                                </div>
+                                <div class="testimonial-carousel dots-right-btm">
+                                    <!-- testimonial-item -->
+                                    <div class="testimonial-item">
+                                        <div class="testimonial-brief">
+                                            <p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Sheltek</span> is the best theme for
+                                                elit, sed do eiusmod tempor dolor sit amet, conse ctetur
+                                                adipiscing elit, ed do eiusmod tempor incididunt ut labore et
+                                                lorna aliquatd minim veniam, quis nostrud exercitation oris nisi
+                                                ut aliquip ex ea commodo equat. Duis aute irure dolo. liquatd
+                                                minim veniam, quis nostrud exercitation oris nisi ut aliquip ex
+                                                ea commodo equat. Duis aute irure dolo uis nostrud exercitation
+                                            </p>
+                                        </div>
+                                        <h6>Zasica Luci, <span>CEO</span></h6>
+                                    </div>
+                                    <!-- testimonial-item -->
+                                    <div class="testimonial-item">
+                                        <div class="testimonial-brief">
+                                            <p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Sheltek</span> is the best theme for
+                                                elit, sed do eiusmod tempor dolor sit amet, conse ctetur
+                                                adipiscing elit, ed do eiusmod tempor incididunt ut labore et
+                                                lorna aliquatd minim veniam, quis nostrud exercitation oris nisi
+                                                ut aliquip ex ea commodo equat. Duis aute irure dolo. liquatd
+                                                minim veniam, quis nostrud exercitation oris nisi ut aliquip ex
+                                                ea commodo equat. Duis aute irure dolo uis nostrud exercitation
+                                            </p>
+                                        </div>
+                                        <h6>Zasica Luci, <span>CEO</span></h6>
+                                    </div>
+                                    <!-- testimonial-item -->
+                                    <div class="testimonial-item">
+                                        <div class="testimonial-brief">
+                                            <p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Sheltek</span> is the best theme for
+                                                elit, sed do eiusmod tempor dolor sit amet, conse ctetur
+                                                adipiscing elit, ed do eiusmod tempor incididunt ut labore et
+                                                lorna aliquatd minim veniam, quis nostrud exercitation oris nisi
+                                                ut aliquip ex ea commodo equat. Duis aute irure dolo. liquatd
+                                                minim veniam, quis nostrud exercitation oris nisi ut aliquip ex
+                                                ea commodo equat. Duis aute irure dolo uis nostrud exercitation
+                                            </p>
+                                        </div>
+                                        <h6>Zasica Luci, <span>CEO</span></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-3">
+                                <div class="testimonial-image">
+                                    <img src="images/others/testimonial.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- TESTIMONIAL AREA END -->
 
+    <!-- BLOG AREA START -->
+    <div class="blog-area pb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title-2 text-center">
+                        <h2>FROM BLOG</h2>
+                        <p>Sheltek is the best theme for elit, sed do eiusmod tempor dolor sit amet, conse
+                            ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliquatd
+                            minim veniam, quis nostrud</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="blog-carousel">
+                        <!-- blog-item -->
+                        <div class="col">
+                            <article class="blog-item bg-gray">
+                                <div class="blog-image">
+                                    <a href="single-blog.html"><img src="images/blog/1.jpg" alt=""></a>
+                                </div>
+                                <div class="blog-info">
+                                    <div class="post-title-time">
+                                        <h5><a href="single-blog.html">Maridland de Villa</a></h5>
+                                        <p>July 30, 2017 / 10 am</p>
+                                    </div>
+                                    <p>Lorem must explain to you how all this mistaolt denouncing pleasure and
+                                        praising pain wasnad I will give you a complete pain was praising</p>
+                                    <a class="read-more" href="single-blog.html">Read more</a>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- blog-item -->
+                        <div class="col">
+                            <article class="blog-item bg-gray">
+                                <div class="blog-image">
+                                    <a href="single-blog.html"><img src="images/blog/2.jpg" alt=""></a>
+                                </div>
+                                <div class="blog-info">
+                                    <div class="post-title-time">
+                                        <h5><a href="single-blog.html">Latest Design House</a></h5>
+                                        <p>July 30, 2017 / 10 am</p>
+                                    </div>
+                                    <p>Lorem must explain to you how all this mistaolt denouncing pleasure and
+                                        praising pain wasnad I will give you a complete pain was praising</p>
+                                    <a class="read-more" href="single-blog.html">Read more</a>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- blog-item -->
+                        <div class="col">
+                            <article class="blog-item bg-gray">
+                                <div class="blog-image">
+                                    <a href="single-blog.html"><img src="images/blog/3.jpg" alt=""></a>
+                                </div>
+                                <div class="blog-info">
+                                    <div class="post-title-time">
+                                        <h5><a href="single-blog.html">Duplex Villa House</a></h5>
+                                        <p>July 30, 2017 / 10 am</p>
+                                    </div>
+                                    <p>Lorem must explain to you how all this mistaolt denouncing pleasure and
+                                        praising pain wasnad I will give you a complete pain was praising</p>
+                                    <a class="read-more" href="single-blog.html">Read more</a>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- blog-item -->
+                        <div class="col">
+                            <article class="blog-item bg-gray">
+                                <div class="blog-image">
+                                    <a href="single-blog.html"><img src="images/blog/2.jpg" alt=""></a>
+                                </div>
+                                <div class="blog-info">
+                                    <div class="post-title-time">
+                                        <h5><a href="single-blog.html">Latest Design House</a></h5>
+                                        <p>July 30, 2017 / 10 am</p>
+                                    </div>
+                                    <p>Lorem must explain to you how all this mistaolt denouncing pleasure and
+                                        praising pain wasnad I will give you a complete pain was praising</p>
+                                    <a class="read-more" href="single-blog.html">Read more</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BLOG AREA END -->
 
-      </div>
+    <!-- BRAND AREA START -->
+    <div class="brand-area pb-115">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="brand-carousel">
+                        <!-- brand-item -->
+                        <div class="col">
+                            <div class="brand-item">
+                                <img src="images/brand/1.png" alt="">
+                            </div>
+                        </div>
+                        <!-- brand-item -->
+                        <div class="col">
+                            <div class="brand-item">
+                                <img src="images/brand/2.png" alt="">
+                            </div>
+                        </div>
+                        <!-- brand-item -->
+                        <div class="col">
+                            <div class="brand-item">
+                                <img src="images/brand/3.png" alt="">
+                            </div>
+                        </div>
+                        <!-- brand-item -->
+                        <div class="col">
+                            <div class="brand-item">
+                                <img src="images/brand/4.png" alt="">
+                            </div>
+                        </div>
+                        <!-- brand-item -->
+                        <div class="col">
+                            <div class="brand-item">
+                                <img src="images/brand/5.png" alt="">
+                            </div>
+                        </div>
+                        <!-- brand-item -->
+                        <div class="col">
+                            <div class="brand-item">
+                                <img src="images/brand/1.png" alt="">
+                            </div>
+                        </div>
+                        <!-- brand-item -->
+                        <div class="col">
+                            <div class="brand-item">
+                                <img src="images/brand/4.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BRAND AREA END -->
 
-    </section>
-
-
-
-  </div>
-
-  
-
-@include('depan.bagian.footer')
-
-<script src="{{asset('/tema/kominfo_rsud_besuki/js/jquery-1.11.0.min.js')}}"></script> 
-
-<script src="{{asset('/tema/kominfo_rsud_besuki/js/bootstrap.min.js')}}"></script> 
-
-<script src="{{asset('/tema/kominfo_rsud_besuki/js/own-menu.js')}}"></script> 
-
-<script src="{{asset('/tema/kominfo_rsud_besuki/js/jquery.isotope.min.js')}}"></script> 
-
-<script src="{{asset('/tema/kominfo_rsud_besuki/js/jquery.flexslider-min.js')}}"></script> 
-
-<script src="{{asset('/tema/kominfo_rsud_besuki/js/jquery.countTo.js')}}"></script> 
-
-<script src="{{asset('/tema/kominfo_rsud_besuki/js/owl.carousel.min.js')}}"></script> 
-
-<script src="{{asset('/tema/kominfo_rsud_besuki/js/jquery.cubeportfolio.min.js')}}"></script> 
-
-<script src="{{asset('/tema/kominfo_rsud_besuki/js/jquery.colio.min.js')}}"></script> 
-
-<script src="{{asset('/tema/kominfo_rsud_besuki/js/main.js')}}"></script>
-
-<script src="{{asset('/tema/fancybox/dist/jquery.fancybox.min.js')}}"></script>
-
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>
-
-<script type="text/javascript">
-
-  $(document).ready(function ($) {
-      
-      $('[data-fancybox"]').fancybox({ });
-
-      $('#Carousel').carousel({
-        interval: 3000
-    })
-  });
-</script>
-
-</body>
-
-</html>
-
+    <!-- SUBSCRIBE AREA START -->
+    <div class="subscribe-area bg-blue call-to-bg plr-140 ptb-50">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-12">
+                    <div class="section-title text-white">
+                        <h3>SUBSCRIBE</h3>
+                        <h2 class="h1">NEWSLETTER</h2>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-12">
+                    <div class="subscribe">
+                        <form action="#">
+                            <input type="text" name="subscribe" placeholder="Enter yur email here...">
+                            <button type="submit" value="send">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SUBSCRIBE AREA END -->
+</section>
+<!-- End page content -->
+@endsection
