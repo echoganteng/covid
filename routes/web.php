@@ -87,7 +87,7 @@ Route::get('/download/json','PageController@json')->name('get.download');
 
 //Auth::routes();
 
-Route::get('/webmin', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
+Route::get('/webmin`', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
 
 Route::post('/webmin', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
 
