@@ -9,27 +9,6 @@
     <!-- Start page content -->
     <section id="page-content" class="page-wrapper">
 
-        <!-- ABOUT SHELTEK AREA START -->
-        <div class="about-sheltek-area ptb-115">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-12">
-                        <div class="section-title mb-30">
-                            <h3>SOME WORD </h3>
-                            <h2>ABOUT SHELTEK</h2>
-                        </div>
-                        <div class="about-sheltek-info">
-                            <p><span data-placement="top" data-toggle="tooltip"
-                                     data-original-title="The name you can trust" class="tooltip-content">Sheltek</span>
-                                is the best theme for elit, sed do
-                                eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et lorna aliquatd minim veniam, quis nostrud exercitation oris
-                                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolo.</p>
-                            <p>Lorem is a dummy text do eiusmod tempor dolor sit amet, onsectetur adip iscing elit,
-                                sed do eiusmod tempor incididunt ut labore et lorna aliqua Ut enim onsectetur </p>
-                            <p>Lorem is a dummy text do eiusmod tempor dolor sit amet, onsectetur adip iscing elit,
-                                sed do eiusmod tempor incididunt ut labore et lorna aliqua Ut enim onsectetur </p>
-                        </div>
                     </div>
                     <div class="col-md-6 col-12">
                         <div class="about-image">
@@ -41,88 +20,22 @@
         </div>
         <!-- ABOUT SHELTEK AREA END -->
 
-        <!-- SERVICES AREA START -->
-        <div class="services-area pb-60">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-title-2 text-center">
-                            <h2>OUR SERVICES</h2>
-                            <p>Sheltek is the best theme for elit, sed do eiusmod tempor dolor sit amet, conse
-                                ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliquatd
-                                minim veniam, quis nostrud</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="service-carousel">
-                            <!-- service-item -->
-                            <div class="col">
-                                <div class="service-item">
-                                    <div class="service-item-image">
-                                        <a href="service-details.html"><img src="images/service/1.jpg" alt=""></a>
-                                    </div>
-                                    <div class="service-item-info">
-                                        <h5><a href="service-details.html">Sale Property</a></h5>
-                                        <p>Property sale best theme for litdo eiusmod tempor dolor sit amet, conse
-                                            tetur adiping eiusmo</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- service-item -->
-                            <div class="col">
-                                <div class="service-item">
-                                    <div class="service-item-image">
-                                        <a href="service-details.html"><img src="images/service/2.jpg" alt=""></a>
-                                    </div>
-                                    <div class="service-item-info">
-                                        <h5><a href="service-details.html">Buy Property</a></h5>
-                                        <p>Property sale best theme for litdo eiusmod tempor dolor sit amet, conse
-                                            tetur adiping eiusmo</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- service-item -->
-                            <div class="col">
-                                <div class="service-item">
-                                    <div class="service-item-image">
-                                        <a href="service-details.html"><img src="images/service/3.jpg" alt=""></a>
-                                    </div>
-                                    <div class="service-item-info">
-                                        <h5><a href="service-details.html">Rent Property</a></h5>
-                                        <p>Property sale best theme for litdo eiusmod tempor dolor sit amet, conse
-                                            tetur adiping eiusmo</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- service-item -->
-                            <div class="col">
-                                <div class="service-item">
-                                    <div class="service-item-image">
-                                        <a href="service-details.html"><img src="images/service/4.jpg" alt=""></a>
-                                    </div>
-                                    <div class="service-item-info">
-                                        <h5><a href="service-details.html">Property Management</a></h5>
-                                        <p>Property sale best theme for litdo eiusmod tempor dolor sit amet, conse
-                                            tetur adiping eiusmo</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- service-item -->
-                            <div class="col">
-                                <div class="service-item">
-                                    <div class="service-item-image">
-                                        <a href="service-details.html"><img src="images/service/4.jpg" alt=""></a>
-                                    </div>
-                                    <div class="service-item-info">
-                                        <h5><a href="service-details.html">Sale Property</a></h5>
-                                        <p>Property sale best theme for litdo eiusmod tempor dolor sit amet, conse
-                                            tetur adiping eiusmo</p>
-                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- service-item -->
+                        <div class="col">
+                            <div class="service-item">
+                                <div class="service-item-image">
+                                    <img src="{{asset('/tema/covid/batuk.png')}}" alt="">
+                                </div>
+                                <div class="service-item-info">
+                                    <h5>Sesak Nafas</h5>
+                                    <p>Apabila COVID-19 berkembang dengan cepat dan besar di paru-paru, fungsi paru akan menurun sehingga terjadi sesak nafas</p>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -155,17 +68,6 @@
         </div>
         <!-- BOOKING AREA END -->
 
-        <!-- FEATURED FLAT AREA START -->
-        <div class="featured-flat-area pt-115 pb-80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-title-2 text-center">
-                            <h2>Featured PROPERTY</h2>
-                            <p>Sheltek is the best theme for elit, sed do eiusmod tempor dolor sit amet, conse
-                                ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliquatd
-                                minim veniam, quis nostrud</p>
-                        </div>
                     </div>
                 </div>
                 <div class="featured-flat">
@@ -268,201 +170,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- flat-item -->
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="flat-item">
-                                <div class="flat-item-image">
-                                    <a href="properties-details.html"><img src="images/flat/4.jpg" alt=""></a>
-                                    <div class="flat-link">
-                                        <a href="properties-details.html">More Details</a>
-                                    </div>
-                                    <ul class="flat-desc">
-                                        <li>
-                                            <img src="images/icons/4.png" alt="">
-                                            <span>450 sqft</span>
-                                        </li>
-                                        <li>
-                                            <img src="images/icons/5.png" alt="">
-                                            <span>5</span>
-                                        </li>
-                                        <li>
-                                            <img src="images/icons/6.png" alt="">
-                                            <span>3</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="flat-item-info">
-                                    <div class="flat-title-price">
-                                        <h5><a href="properties-details.html">Masons de Villa </a></h5>
-                                        <span class="price">$52,350</span>
-                                    </div>
-                                    <p><img src="images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- flat-item -->
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="flat-item">
-                                <div class="flat-item-image">
-                                    <span class="for-sale">For Sale</span>
-                                    <a href="properties-details.html"><img src="images/flat/5.jpg" alt=""></a>
-                                    <div class="flat-link">
-                                        <a href="properties-details.html">More Details</a>
-                                    </div>
-                                    <ul class="flat-desc">
-                                        <li>
-                                            <img src="images/icons/4.png" alt="">
-                                            <span>450 sqft</span>
-                                        </li>
-                                        <li>
-                                            <img src="images/icons/5.png" alt="">
-                                            <span>5</span>
-                                        </li>
-                                        <li>
-                                            <img src="images/icons/6.png" alt="">
-                                            <span>3</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="flat-item-info">
-                                    <div class="flat-title-price">
-                                        <h5><a href="properties-details.html">Masons de Villa </a></h5>
-                                        <span class="price">$52,350</span>
-                                    </div>
-                                    <p><img src="images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- flat-item -->
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="flat-item">
-                                <div class="flat-item-image">
-                                    <a href="properties-details.html"><img src="images/flat/6.jpg" alt=""></a>
-                                    <div class="flat-link">
-                                        <a href="properties-details.html">More Details</a>
-                                    </div>
-                                    <ul class="flat-desc">
-                                        <li>
-                                            <img src="images/icons/4.png" alt="">
-                                            <span>450 sqft</span>
-                                        </li>
-                                        <li>
-                                            <img src="images/icons/5.png" alt="">
-                                            <span>5</span>
-                                        </li>
-                                        <li>
-                                            <img src="images/icons/6.png" alt="">
-                                            <span>3</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="flat-item-info">
-                                    <div class="flat-title-price">
-                                        <h5><a href="properties-details.html">Masons de Villa </a></h5>
-                                        <span class="price">$52,350</span>
-                                    </div>
-                                    <p><img src="images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- flat-item -->
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="flat-item">
-                                <div class="flat-item-image">
-                                    <span class="for-sale rent">For rent</span>
-                                    <a href="properties-details.html"><img src="images/flat/7.jpg" alt=""></a>
-                                    <div class="flat-link">
-                                        <a href="properties-details.html">More Details</a>
-                                    </div>
-                                    <ul class="flat-desc">
-                                        <li>
-                                            <img src="images/icons/4.png" alt="">
-                                            <span>450 sqft</span>
-                                        </li>
-                                        <li>
-                                            <img src="images/icons/5.png" alt="">
-                                            <span>5</span>
-                                        </li>
-                                        <li>
-                                            <img src="images/icons/6.png" alt="">
-                                            <span>3</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="flat-item-info">
-                                    <div class="flat-title-price">
-                                        <h5><a href="properties-details.html">Masons de Villa </a></h5>
-                                        <span class="price">$52,350</span>
-                                    </div>
-                                    <p><img src="images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- flat-item -->
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="flat-item">
-                                <div class="flat-item-image">
-                                    <a href="properties-details.html"><img src="images/flat/8.jpg" alt=""></a>
-                                    <div class="flat-link">
-                                        <a href="properties-details.html">More Details</a>
-                                    </div>
-                                    <ul class="flat-desc">
-                                        <li>
-                                            <img src="images/icons/4.png" alt="">
-                                            <span>450 sqft</span>
-                                        </li>
-                                        <li>
-                                            <img src="images/icons/5.png" alt="">
-                                            <span>5</span>
-                                        </li>
-                                        <li>
-                                            <img src="images/icons/6.png" alt="">
-                                            <span>3</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="flat-item-info">
-                                    <div class="flat-title-price">
-                                        <h5><a href="properties-details.html">Masons de Villa </a></h5>
-                                        <span class="price">$52,350</span>
-                                    </div>
-                                    <p><img src="images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- flat-item -->
-                        <div class="col-lg-4 col-12 d-none d-lg-block">
-                            <div class="flat-item">
-                                <div class="flat-item-image">
-                                    <span class="for-sale">For Sale</span>
-                                    <a href="properties-details.html"><img src="images/flat/9.jpg" alt=""></a>
-                                    <div class="flat-link">
-                                        <a href="properties-details.html">More Details</a>
-                                    </div>
-                                    <ul class="flat-desc">
-                                        <li>
-                                            <img src="images/icons/4.png" alt="">
-                                            <span>450 sqft</span>
-                                        </li>
-                                        <li>
-                                            <img src="images/icons/5.png" alt="">
-                                            <span>5</span>
-                                        </li>
-                                        <li>
-                                            <img src="images/icons/6.png" alt="">
-                                            <span>3</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="flat-item-info">
-                                    <div class="flat-title-price">
-                                        <h5><a href="properties-details.html">Masons de Villa </a></h5>
-                                        <span class="price">$52,350</span>
-                                    </div>
-                                    <p><img src="images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -534,9 +241,6 @@
         </div>
         <!-- FEATURES AREA END -->
 
-        <!-- OUR AGENTS AREA START -->
-        <div class="our-agents-area pt-115 pb-55">
-            <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="section-title-2 text-center">
@@ -810,17 +514,6 @@
         </div>
         <!-- TESTIMONIAL AREA END -->
 
-        <!-- BLOG AREA START -->
-        <div class="blog-area pb-60">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-title-2 text-center">
-                            <h2>FROM BLOG</h2>
-                            <p>Sheltek is the best theme for elit, sed do eiusmod tempor dolor sit amet, conse
-                                ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliquatd
-                                minim veniam, quis nostrud</p>
-                        </div>
                     </div>
                 </div>
                 <div class="row">

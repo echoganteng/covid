@@ -8,7 +8,7 @@
     'timezone' => 'Asia/Jakarta',
     'locale' => 'id',
     'fallback_locale' => 'id_ID',
-    'key' => 'base64:0GJscDGTDYNJa/BVY0QvCbvFolrT9cz+3j+WpqsrbzM=',
+
     'cipher' => 'AES-256-CBC',
     'log' => 'single',
     'log_level' => 'debug',
@@ -176,7 +176,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/home/acek/Documents/MyApps/covid/storage/framework/cache/data',
+
       ),
       'memcached' => 
       array (
@@ -347,12 +347,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/home/acek/Documents/MyApps/covid/storage/app',
+
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/home/acek/Documents/MyApps/covid/storage/app/public',
+
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -668,7 +668,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/home/acek/Documents/MyApps/covid/resources/views/vendor/mail',
+
       ),
     ),
   ),
@@ -748,7 +748,7 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => '/home/acek/Documents/MyApps/covid/storage/framework/sessions',
+
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -782,8 +782,6 @@
   array (
     'paths' => 
     array (
-      0 => '/home/acek/Documents/MyApps/covid/resources/views',
-    ),
-    'compiled' => '/home/acek/Documents/MyApps/covid/storage/framework/views',
+
   ),
 );
