@@ -10,7 +10,8 @@
 <!-- Maplace-active -->
 <script src="{{asset('/tema/frontend/js/maplace-active.js')}}"></script>
 <!-- Google Map js -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeeHDCOXmUMja1CFg96RbtyKgx381yoBU"></script>
-<script src="{{asset('/tema/frontend/js/google-map.js')}}"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCyz35pK5Ccrp8a58PJSEO9vhLC6WU3FvU&libraries=drawing,geometry"></script>
+{{--<script src="{{asset('/tema/frontend/js/google-map.js')}}"></script>--}}
 <!-- Main js file that contents all jQuery plugins activation. -->
 <script src="{{asset('/tema/frontend/js/main.js')}}"></script>
+@stack('script')
